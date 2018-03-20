@@ -12,8 +12,8 @@ class file_logger(logger):
     """
     def log(self, log_level, message, filename='file_log.txt'):
         if self.__log_level__ >= log_level:
-            my_file = open(filename, "w+")
-            my_file.write((str(log_level) + ": " + message))
+            my_file = open(filename, "a")
+            my_file.write((str(log_level) + ": " + message + "\n"))
             my_file.close()
         return
 
